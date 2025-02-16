@@ -1,0 +1,92 @@
+@if (dataSubmitted) {
+    <div class="container">
+        <div class="form-container">
+            <span class="grayLine"></span>
+            <ul>
+                <li>
+                    <label>Cluster ID:{{clusterID()}}</label>
+                    <span></span>
+                </li>
+                <li>
+                    <label>Username:{{username()}}</label>
+                    <span></span>
+                </li>
+                <li>
+                    <label>Password:{{password()}}</label>
+                    <span></span>
+                </li>
+                <li>
+                    <label>Node Name:{{nodeName()}}</label>
+                    <span></span>
+                </li>
+                <li>
+                    <label>Admin API Key:{{adminAPIKey()}}</label>
+                    <span></span>
+                </li>
+                <li>
+                    <label>Query API Key:{{queryAPIKey()}}</label>
+                    <span></span>
+                </li>
+            </ul>
+    
+            <span class="grayLine"></span>
+        </div>
+    </div>
+    
+    }
+    @else {
+    <div class="container">
+        <form (ngSubmit)="onSubmit()" name="Tester">
+            <div class="form-container">
+                
+                <h3> Advanced Step 2: Enter the Cluster ID of the existing server cluster</h3>
+                <label class="checkbox">
+                    <span>Check me: </span>
+                    <div>
+                        <input type="checkbox" [(ngModel)]="isChecked" (change)="onCheckboxChange()" name="testbox"/>
+                    </div>
+                </label>
+                <label class="checkbox">
+                    <span>Check me: </span>
+                    <div>
+                        <input type="checkbox" [(ngModel)]="isChecked" (change)="onCheckboxChange()" name="testbox" />
+                    </div>
+                </label>
+                <ul>
+                    <li>
+                        <label>Cluster ID:</label>
+                        <input class="input-class" type="text" [(ngModel)]="clusterID" name="Tester" required
+                             />
+                    </li>
+                    <li>
+                        <label>Username:</label>
+                        <input class="input-class" type="text" [(ngModel)]="username" name="Tester" />
+                    </li>
+                    <li>
+                        <label>Password:</label>
+                        <input class="input-class" type="text" [(ngModel)]="password" name="Tester" />
+                    </li>
+                    <li>
+                        <label>Node Name:</label>
+                        <input class="input-class" type="text" [(ngModel)]="nodeName" name="Tester" />
+                    </li>
+                    <li>
+                        <label>Admin API Key:</label>
+                        <input class="input-class" type="text" [(ngModel)]="adminAPIKey" name="Tester" />
+                    </li>
+                    <li>
+                        <label>Query API Key:</label>
+                        <input class="input-class" type="text" [(ngModel)]="queryAPIKey" name="Tester" />
+                    </li>
+                </ul>
+                <button 
+                type="submit"
+                 >Submit</button>
+                <span class="grayLine"></span>
+            </div>
+        </form>
+    </div>
+}
+    
+    
+    
